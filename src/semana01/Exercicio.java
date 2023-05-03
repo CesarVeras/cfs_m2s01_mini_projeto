@@ -15,22 +15,6 @@ public class Exercicio {
         exibirAprovados();
     }
 
-    private static void exibirAprovados() {
-        StringBuilder aprovados = new StringBuilder();
-        aprovados.append("Aprovados: \n");
-        StringBuilder reprovados = new StringBuilder();
-        reprovados.append("Reprovados: \n");
-        for (int i = 0; i < nomesArray.size(); i++) {
-            if (mediasArray.get(i) >= 7.0) {
-                aprovados.append(nomesArray.get(i)).append(": ").append(mediasArray.get(i)).append("\n");
-            } else {
-                reprovados.append(nomesArray.get(i)).append(": ").append(mediasArray.get(i)).append("\n");
-            }
-        }
-        System.out.printf("%s%n---------------%n",aprovados);
-        System.out.printf("%s%n---------------%n",reprovados);
-    }
-
     public static void coletarDados() {
         while(!digitado.equals("fim")) {
             System.out.print("Digite o nome do aluno (digite 'fim' para parar): ");
@@ -62,5 +46,21 @@ public class Exercicio {
             out.append("\n--------------------\n");
         }
         System.out.print(out);
+    }
+
+    private static void exibirAprovados() {
+        StringBuilder aprovados = new StringBuilder();
+        aprovados.append("Aprovados: \n");
+        StringBuilder reprovados = new StringBuilder();
+        reprovados.append("Reprovados: \n");
+        for (int i = 0; i < nomesArray.size(); i++) {
+            if (mediasArray.get(i) >= 7.0) {
+                aprovados.append(nomesArray.get(i)).append(": ").append(mediasArray.get(i)).append("\n");
+            } else {
+                reprovados.append(nomesArray.get(i)).append(": ").append(mediasArray.get(i)).append("\n");
+            }
+        }
+        System.out.printf("%s%n---------------%n",aprovados);
+        System.out.printf("%s%n---------------%n",reprovados);
     }
 }
